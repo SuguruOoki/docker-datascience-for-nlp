@@ -1,0 +1,37 @@
+version: '3.3'
+services:
+  jupyterlab:
+    build:
+      context: .
+      dockerfile: ./jupyterlab/Dockerfile
+    expose:
+      - 3306
+    ports:
+      - 58888:8888
+    env_file: .env
+    volumes:
+      - ./${PROJECT_PATH}:/home/jovyan/code
+    command: start-notebook.sh --NotebookApp.token=''
+    networks:
+      - default
+
+  mysql:
+    build:
+      context: ./mysql
+      dockerfile: Dockerfile
+    ports:
+      - 53306:3306
+    environment:
+      - MYSQL_DATABASE=work
+      - MYSQL_USER=worker
+      - MYSQL_PASSWORD=worker
+      - MYSQL_ROOT_PASSWORD=root
+      - TZ=UTC
+    volumes:
+      - ./mysql/conf.d:/etc/mysql/conf.d
+      # 初期データを投入するSQLが格納されているdir
+      - ./mysql/init:/docker-entrypoint-initdb.d
+      # 永続化するときにマウントするdir
+      - ./mysql/mysql_data:/var/lib/mysql
+    networks:
+      - default
