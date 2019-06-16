@@ -20,6 +20,8 @@ docker-compose.yml内にプロジェクトごとにローカルにマウント�
 環境変数 PROJECT_PATH を設定することで、変更が可能。
 上記環境変数は .env ファイルに持たせる。
 
+デフォルトでは ./code が PROJECT_PATHとなる。
+
 # データ分析用コンテナからmysqlのコンテナに接続
 
 ```
