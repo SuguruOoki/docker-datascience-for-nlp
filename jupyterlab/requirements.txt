@@ -67,7 +67,7 @@ nltk==3.4.3
 notebook==5.7.8
 numba==0.42.1
 numexpr==2.6.9
-numpy==1.15.4
+numpy==1.22.0
 olefile==0.46
 packaging==19.0
 pamela==1.0.0
