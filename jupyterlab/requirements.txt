@@ -59,7 +59,7 @@ mecab-python3==0.996.2
 mistune==0.8.4
 mpmath==1.1.0
 msgpack==0.6.1
-nbconvert==5.4.1
+nbconvert==6.3.0
 nbformat==4.4.0
 neologdn==0.4
 networkx==2.3
