@@ -52,7 +52,7 @@ jupyterlab-server==0.2.0
 kiwisolver==1.1.0
 llvmlite==0.27.1
 locket==0.2.0
-Mako==1.0.12
+Mako==1.2.2
 MarkupSafe==1.1.1
 matplotlib==3.0.3
 mecab-python3==0.996.2
